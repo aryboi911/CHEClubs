@@ -1,7 +1,6 @@
 .nav-bar{
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
-    margin-left: 13rem;
-    margin-right: 13rem;
+    margin-left: 16vw;
+    margin-right: 16vw;
 }

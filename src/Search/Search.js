@@ -1,15 +1,14 @@
 import React from 'react';
-import glass from '../assets/glass.png';
 import styles from './Search.module.css';
 
 export function Search(){
     return(
         <div>
             <div className = {styles.search}>   
-                <form class= "box">
-                    <div class="field has-addons">
-                    <p class="control">
-                        <span class="select">
+                <form className= "box">
+                    <div className="field has-addons">
+                    <p className="control">
+                        <span className="select">
                         <select>
                             <option>Type of Club (Optional)</option>
                             <option>Engineering</option>
@@ -18,27 +17,18 @@ export function Search(){
                         </select>
                         </span>
                     </p>
-                    <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="Club Name..."/>
+                    <p className="control is-expanded">
+                        <input className="input" type="text" placeholder="Club Name..."/>
                     </p>
-                    <p class="control">
-                        <a className="button">
-                        <img src = {glass} className = {styles.logo} alt = 'logo'/>
-                        </a>
+                    <p className="control">
+                    <button className={`button ${styles['search-button']}`}>
+                        <div className="icon">
+                            <i className="fas fa-search"></i>
+                        </div>
+                    </button>
                     </p>
                     </div>
                 </form>
-            </div>
-                <div>
-                    <div class="notification is-info"
-                        style={{
-                            position: 'absolute', left: '50%',
-                            transform: 'translate(-50%, 30%)'
-                        }}
-                    >
-                    <button class="delete"></button>
-                     Some of the information on this website may be outdated.
-                </div>
             </div>
         </div>
     );

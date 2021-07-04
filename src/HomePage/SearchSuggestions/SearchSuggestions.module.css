@@ -1,0 +1,16 @@
+.suggestions{
+    margin-top:3vh;
+    display:flex;
+    justify-content: space-evenly;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+:global(.icon).suggestion{
+    color: white;
+    margin-right: 5px;
+}
+.group{
+    display:flex;
+    align-items: center;
+}
