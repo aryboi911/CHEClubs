@@ -32,9 +32,8 @@ export function Search(){
                 <div>
                     <div class="notification is-info"
                         style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            position: 'absolute', left: '50%',
+                            transform: 'translate(-50%, 30%)'
                         }}
                     >
                     <button class="delete"></button>
