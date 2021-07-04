@@ -1,0 +1,15 @@
+.logo{
+    width: 40px;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.input-control{
+    min-width: 500px;
+}
+
+.search{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
