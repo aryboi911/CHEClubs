@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ClubResults.module.css';
-import { clubName, members, officers, presName, advisorName, advisorEmail, whatToDo, description,
+import { clubArray, clubName, members, officers, presName, advisorName, advisorEmail, whatToDo, description,
     meetRoom, activeMonths, tag1, tag2, tag3 } from '../Data';
 import CHEScienceOlympiadLOGOALLTRANSPARENT from '../assets/CHEScienceOlympiadLOGOALLTRANSPARENT.png';
 import {motion} from 'framer-motion';
@@ -46,9 +46,7 @@ export function ClubResults(){
                             <h3><strong>Advisor:</strong> {advisorName[i]}</h3>
                             <h3><strong>Advisor Email</strong>: {advisorEmail[i]}</h3>
                             <div className = {styles['show-more']}>
-                                <button class="button is-info" id = " show-more-button" 
-                                clubInfo = {clubName[i]} tagName = {clubName[i]}>
-                                Show More</button>
+                                <button class="button is-info" id = {clubArray[i]}>Show More</button>
                             </div>
                         </div>
                     </div>
@@ -56,8 +54,8 @@ export function ClubResults(){
                     </div>
                 </div>
             </motion.div>
-            <div class="modal" clubInfo = {clubName[i]} >
-            <div class="modal-background"></div>
+            <div class="modal" id = {`modal${clubArray[i]}`}>
+            <div class="modal-background" id = {`modalbg${clubArray[i]}`}></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                 <div class={`modal-card-title ${styles['header']}`}>{clubName[i]}
@@ -71,7 +69,7 @@ export function ClubResults(){
                     }
                     </div>
                 </div>
-                <button class="delete" aria-label="close"></button>
+                <button class="delete" aria-label="close" id = {`delete${clubArray[i]}`}></button>
                 </header>
                 <section class="modal-card-body">
                     <section class="section">

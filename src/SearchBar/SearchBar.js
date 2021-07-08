@@ -30,10 +30,12 @@ export function SearchBar(){
                     whileHover = {{scale: 1.15}}
                     >Club List
                 </motion.button>
+                <a href={"https://forms.gle/bJUaSDvAyXwtheD1A"}>
                 <motion.button class="button is-danger is-light"
                     whileHover = {{scale: 1.15}}
                     >Advertise a Club
                 </motion.button>
+                </a>
             </div> 
         </div>
         </div>

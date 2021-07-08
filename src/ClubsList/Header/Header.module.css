@@ -1,0 +1,13 @@
+.header{
+    padding-top: 2.5vh;
+    padding-left:3vw;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5vw;
+}
+
+
+.filter{
+    padding-left: 3vw;
+    padding-top: 3.1vh;
+}
