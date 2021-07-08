@@ -3,4 +3,6 @@
     justify-content: space-between;
     margin-left: 16vw;
     margin-right: 16vw;
+    padding-top: 2.5vh ;
+    flex-wrap: wrap;
 }

@@ -1,0 +1,21 @@
+.logo{
+    width: 5vw;
+}
+
+.nav-bar{
+    display:flex;
+    background: #333333;
+    align-items: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.search{
+    width: 60vw;
+}
+
+.club-list-button{
+    margin-right: 1vw;
+}

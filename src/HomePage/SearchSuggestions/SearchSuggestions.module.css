@@ -1,9 +1,10 @@
 .suggestions{
-    margin-top:3vh;
+    margin-top:1.5vh;
     display:flex;
     justify-content: space-evenly;
     margin-left: 20vw;
     margin-right: 20vw;
+    flex-wrap: wrap;
 }
 
 :global(.icon).suggestion{

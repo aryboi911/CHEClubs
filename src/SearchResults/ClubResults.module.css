@@ -1,0 +1,26 @@
+.results{
+    padding-left: 3vw;
+    padding-right: 6vw;
+    padding-bottom: 20px;
+}
+
+.tag-f{
+    margin-left: 5px;
+}
+
+.contact{
+    margin-top: 1.9vw;
+}
+
+.show-more{
+    display:flex;
+    margin-left: 21.5vw;
+    flex-wrap: wrap;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3.55vw;
+    padding-right: 3.55vw;
+}
