@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ClubResults.module.css';
-import { clubArray, clubName, members, officers, presName, advisorName, advisorEmail, whatToDo, description,
+import { instaLink, gcLink, clubArray, clubName, members, officers, presName, advisorName, advisorEmail, whatToDo, description,
     meetRoom, activeMonths, tag1, tag2, tag3 } from '../Data';
 import CHEScienceOlympiadLOGOALLTRANSPARENT from '../assets/CHEScienceOlympiadLOGOALLTRANSPARENT.png';
 import {motion} from 'framer-motion';
@@ -101,6 +101,26 @@ export function ClubResults(){
                                 
                                 </div>
                             </div>
+                            {instaLink[i] &&
+                            <a href = {instaLink[i]}>
+                            <button class={`button is-danger ${styles['link-button']}`}>
+                                <span class="icon is-medium">
+                                <i className="fab fa-instagram"></i>
+                                </span>
+                                <span>Instagram</span>
+                            </button>
+                            </a>
+                            }
+                            {gcLink[i] &&
+                            <a href = {gcLink[i]}>
+                            <button class={`button is-success ${styles['link-button']}`}>
+                                <span class="icon is-medium">
+                                <i class="fab fa-google"></i>
+                                </span>
+                                <span>Google Classroom</span>
+                            </button>
+                            </a>
+                            }
                         </h2>
                     </section>  
                 </section>

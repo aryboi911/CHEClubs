@@ -1,5 +1,5 @@
 .results{
-    padding-left: 3vw;
+    padding-left: 0;
     padding-right: 6vw;
     padding-bottom: 20px;
 }
@@ -14,7 +14,7 @@
 
 .show-more{
     display:flex;
-    margin-left: 21.5vw;
+    margin-left: 20.75vw;
     flex-wrap: wrap;
 }
 
@@ -23,4 +23,8 @@
     justify-content: space-between;
     padding-left: 3.55vw;
     padding-right: 3.55vw;
+}
+
+.link-button{
+    margin-right: 10px;
 }
