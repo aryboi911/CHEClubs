@@ -151,3 +151,78 @@ reportWebVitals();
         hiModal.classList.remove('is-active');
       })
   }
+
+
+// Filters
+const catVolunteering = document.querySelector("#catVolunteering");
+const catScience = document.querySelector("#catScience");
+const catSports = document.querySelector("#catSports");
+const catArts = document.querySelector("#catArts");
+
+if(catVolunteering){
+  catVolunteering.addEventListener('click', () => {
+    if(catVolunteering.classList.contains('is-primary') === false){
+      catVolunteering.classList.add('is-primary')
+    }
+    if(catScience.classList.contains('is-primary')){
+      catScience.classList.remove('is-primary')
+    }
+    if(catSports.classList.contains('is-primary')){
+      catSports.classList.remove('is-primary')
+    }
+    if(catArts.classList.contains('is-primary')){
+      catArts.classList.remove('is-primary')
+    }
+  })
+}
+
+if(catScience){
+  catScience.addEventListener('click', () => {
+    if(catScience.classList.contains('is-primary') === false){
+      catScience.classList.add('is-primary')
+    }
+    if(catVolunteering.classList.contains('is-primary')){
+      catVolunteering.classList.remove('is-primary')
+    }
+    if(catSports.classList.contains('is-primary')){
+      catSports.classList.remove('is-primary')
+    }
+    if(catArts.classList.contains('is-primary')){
+      catArts.classList.remove('is-primary')
+    }
+  })
+}
+
+if(catSports){
+  catSports.addEventListener('click', () => {
+    if(catSports.classList.contains('is-primary') === false){
+      catSports.classList.add('is-primary')
+    }
+    if(catVolunteering.classList.contains('is-primary')){
+      catVolunteering.classList.remove('is-primary')
+    }
+    if(catScience.classList.contains('is-primary')){
+      catScience.classList.remove('is-primary')
+    }
+    if(catArts.classList.contains('is-primary')){
+      catArts.classList.remove('is-primary')
+    }
+  })
+}
+
+if(catArts){
+  catArts.addEventListener('click', () => {
+    if(catArts.classList.contains('is-primary') === false){
+      catArts.classList.add('is-primary')
+    }
+    if(catVolunteering.classList.contains('is-primary')){
+      catVolunteering.classList.remove('is-primary')
+    }
+    if(catScience.classList.contains('is-primary')){
+      catScience.classList.remove('is-primary')
+    }
+    if(catSports.classList.contains('is-primary')){
+      catSports.classList.remove('is-primary')
+    }
+  })
+}

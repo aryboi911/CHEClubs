@@ -15,10 +15,14 @@ export function SearchResultsSummary(){
                         borderColor : '#000000',
                     }}/>
                     <label class="label">Category</label>
-                    <button class={`button is-rounded ${styles['category']}`}>Volunteering</button>
-                    <button class={`button is-rounded ${styles['category']}`}>Science</button>
-                    <button class={`button is-rounded ${styles['category']}`}>Sports</button>
-                    <button class={`button is-rounded ${styles['category']}`}>Arts</button>
+                    <button class={`button is-rounded ${styles['category']}`}
+                        id = "catVolunteering" >Volunteering</button>
+                    <button class={`button is-rounded ${styles['category']}`}
+                        id = "catScience" >Science</button>
+                    <button class={`button is-rounded ${styles['category']}`}
+                        id = "catSports" >Sports</button>
+                    <button class={`button is-rounded ${styles['category']}`}
+                        id = "catArts" >Arts</button>
                     <hr  className = {styles['line']}style={{
                         color: '#dcdcdc',
                         backgroundColor: '#dcdcdc',

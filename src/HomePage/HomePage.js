@@ -6,6 +6,7 @@ import {Search} from '../Search/Search'
 import './HomePage.css';
 import {SearchSuggestions} from './SearchSuggestions/SearchSuggestions';
 import {motion} from 'framer-motion';
+import { Recommended } from './Recommended';
 
 export function HomePage() {
     return(
@@ -17,6 +18,7 @@ export function HomePage() {
                 src = {CHEScienceOlympiadLOGOALLTRANSPARENT} className = {styles.logo} alt = 'logo'/>
             <Search />
             <SearchSuggestions/>
+            <Recommended />
         </div>
     );
 }

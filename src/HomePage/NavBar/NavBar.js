@@ -27,9 +27,9 @@ export function NavBar() {
                     whileHover = {{scale: 1.15}}
                     >
                     <button class="button is-ghost has-text-light">
-                        <a href={"https://forms.gle/bJUaSDvAyXwtheD1A"}>
-                        <strong className = "has-text-light">Advertise Your Club</strong>
-                        </a>
+                    <a href={"https://forms.gle/bJUaSDvAyXwtheD1A"}>
+                    <strong className = "has-text-light">Advertise Your Club</strong>
+                    </a>
                     </button>
                 </motion.div>
                 <motion.div
