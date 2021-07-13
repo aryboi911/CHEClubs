@@ -1,8 +1,9 @@
+// This displays all of the clubs on the "Clubs List" page and renders the modals that show information about the 
+// the clubs when pressed
+
 import React from 'react';
 import styles from './ListOfClubs.module.css';
-import { gcLink, instaLink, clubArray, clubName, members, officers, presName, advisorName, advisorEmail, whatToDo, description,
-    meetRoom, activeMonths, tag1, tag2, tag3 } from '../Data';
-import CHEScienceOlympiadLOGOALLTRANSPARENT from '../assets/CHEScienceOlympiadLOGOALLTRANSPARENT.png';
+import { arrayClubs } from '../Data';
 import {motion} from 'framer-motion';
 
 export function ListOfClubs(){
@@ -10,384 +11,167 @@ export function ListOfClubs(){
     const items = [];
     const modals = [];
 
-    for (let i = 0; i < clubName.length; i+=5) {
-        items.push(
-            <div className = {styles['results']}>
-                <div className="columns">
-                <motion.div class="column"
-                    initial ={{opacity: 0, scale:0}}
-                    animate = {{opacity: 1, scale:1}}>
-                    <div className = {`box ${styles['inner-box']}`}>
-                    <div className = {styles['actual-content']}>
-                        <div>
-                            <tr>
-                            <p class="title">{clubName[i]}</p>
-                            </tr>
-                            <div>
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag1[i]}</span>
-                                {tag2[i] &&
-                                    <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i]}</span>
-                                }
-                                {tag3[i] &&
-                                    <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i]}</span>
-                                }
-                            </div>
-                        </div>
-                        <div className= {styles['words']}>
-                            <tr>
-                            <hr  className = {styles['line']}style={{
-                                color: '#000000',
-                                backgroundColor: '#000000',
-                                height: .1,
-                                borderColor : '#000000',
-                            }}/>
-                            </tr>
-                            <tr>
-                            <img src={CHEScienceOlympiadLOGOALLTRANSPARENT} alt = "logo"/>
-                            </tr>
-                            <tr>
-                            <hr  className = {styles['line1']}style={{
-                                color: '#000000',
-                                height: .1
-                            }}/>
-                            </tr>
-                            <tr>
-                            <h3><strong>Members</strong>: {members[i]}</h3>
-                            <h3><strong>Meeting Room: </strong> 
-                                    {meetRoom[i]}</h3>
-                            <h3><strong>Advisor Email</strong>: {advisorEmail[i]}</h3>
-                            </tr>
-                            <tr>
-                            <hr  className = {styles['line1']}style={{
-                                color: '#000000',
-                                height: .1
-                            }}/>
-                            </tr>
-                            <div className = {styles['show-more']}>
-                                    <button class="button is-info" id = {clubArray[i]}>Show More</button>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </motion.div>
-                {clubName[i+1] &&
-                <motion.div class="column"
-                    initial ={{opacity: 0, scale:0}}
-                    animate = {{opacity: 1, scale:1}}>
-                <div className = {`box ${styles['inner-box']}`}>
-                <div className = {styles['actual-content']}>
-                    <div>
-                        <tr>
-                        <p class="title">{clubName[i+1]}</p>
-                        </tr>
-                        <div>
-                            <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag1[i+1]}</span>
-                            {tag2[i+1] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i+1]}</span>
-                            }
-                            {tag3[i+1] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i+1]}</span>
-                            }
-                        </div>
-                    </div>
-                    <div className= {styles['words']}>
-                        <tr>
-                        <hr  className = {styles['line']}style={{
-                            color: '#000000',
-                            backgroundColor: '#000000',
-                            height: .1,
-                            borderColor : '#000000',
-                        }}/>
-                        </tr>
-                        <tr>
-                        <img src={CHEScienceOlympiadLOGOALLTRANSPARENT} alt = "logo"/>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <tr>
-                        <h3><strong>Members</strong>: {members[i+1]}</h3>
-                        <h3><strong>Meeting Room: </strong> 
-                                {meetRoom[i+1]}</h3>
-                        <h3><strong>Advisor Email</strong>: {advisorEmail[i+1]}</h3>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <div className = {styles['show-more']}>
-                                <button class="button is-info" id = {clubArray[i+1]}>Show More</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </motion.div>
-                }
-                {clubName[i+2] &&
-                <motion.div class="column"
-                initial ={{opacity: 0, scale:0}}
-                animate = {{opacity: 1, scale:1}}>
-                <div className = {`box ${styles['inner-box']}`}>
-                <div className = {styles['actual-content']}>
-                    <div>
-                        <tr>
-                        <p class="title">{clubName[i+2]}</p>
-                        </tr>
-                        <div>
-                            <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag1[i+2]}</span>
-                            {tag2[i+2] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i+2]}</span>
-                            }
-                            {tag3[i+2] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i+2]}</span>
-                            }
-                        </div>
-                    </div>
-                    <div className= {styles['words']}>
-                        <tr>
-                        <hr  className = {styles['line']}style={{
-                            color: '#000000',
-                            backgroundColor: '#000000',
-                            height: .1,
-                            borderColor : '#000000',
-                        }}/>
-                        </tr>
-                        <tr>
-                        <img src={CHEScienceOlympiadLOGOALLTRANSPARENT} alt = "logo"/>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <tr>
-                        <h3><strong>Members</strong>: {members[i+2]}</h3>
-                        <h3><strong>Meeting Room: </strong> 
-                                {meetRoom[i+2]}</h3>
-                        <h3><strong>Advisor Email</strong>: {advisorEmail[i+2]}</h3>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <div className = {styles['show-more']}>
-                                <button class="button is-info" id = {clubArray[i+2]}>Show More</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </motion.div>
-                }
-                {clubName[i+3] &&
-                <motion.div class="column"
-                    initial ={{opacity: 0, scale:0}}
-                    animate = {{opacity: 1, scale:1}}>
-                <div className = {`box ${styles['inner-box']}`}>
-                <div className = {styles['actual-content']}>
-                    <div>
-                        <tr>
-                        <p class="title">{clubName[i+3]}</p>
-                        </tr>
-                        <div>
-                            <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag1[i+3]}</span>
-                            {tag2[i+3] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i+3]}</span>
-                            }
-                            {tag3[i+3] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i+3]}</span>
-                            }
-                        </div>
-                    </div>
-                    <div className= {styles['words']}>
-                        <tr>
-                        <hr  className = {styles['line']}style={{
-                            color: '#000000',
-                            backgroundColor: '#000000',
-                            height: .1,
-                            borderColor : '#000000',
-                        }}/>
-                        </tr>
-                        <tr>
-                        <img src={CHEScienceOlympiadLOGOALLTRANSPARENT} alt = "logo"/>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <tr>
-                        <h3><strong>Members</strong>: {members[i+3]}</h3>
-                        <h3><strong>Meeting Room: </strong> 
-                                {meetRoom[i+3]}</h3>
-                        <h3><strong>Advisor Email</strong>: {advisorEmail[i+3]}</h3>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <div className = {styles['show-more']}>
-                                <button class="button is-info" id = {clubArray[i+3]}>Show More</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </motion.div>
-                }
-                {clubName[i+4] &&
-                <motion.div class="column"
-                    initial ={{opacity: 0, scale:0}}
-                    animate = {{opacity: 1, scale:1}}>
-                <div className = {`box ${styles['inner-box']}`}>
-                <div className = {styles['actual-content']}>
-                    <div>
-                    <tr>
-                        <p class="title">{clubName[i+4]}</p>
-                        </tr>
-                        <div>
-                            <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag1[i+4]}</span>
-                            {tag2[i+4] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i+4]}</span>
-                            }
-                            {tag3[i+4] &&
-                                <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i+4]}</span>
-                            }
-                        </div>
-                    </div>
-                    <div className= {styles['words']}>
-                        <tr>
-                        <hr  className = {styles['line']}style={{
-                            color: '#000000',
-                            backgroundColor: '#000000',
-                            height: .1,
-                            borderColor : '#000000',
-                        }}/>
-                        </tr>
-                        <tr>
-                        <img src={CHEScienceOlympiadLOGOALLTRANSPARENT} alt = "logo"/>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <tr>
-                        <h3><strong>Members</strong>: {members[i+4]}</h3>
-                        <h3><strong>Meeting Room: </strong> 
-                                {meetRoom[i+4]}</h3>
-                        <h3><strong>Advisor Email</strong>: {advisorEmail[i+4]}</h3>
-                        </tr>
-                        <tr>
-                        <hr  className = {styles['line1']}style={{
-                            color: '#000000',
-                            height: .1
-                        }}/>
-                        </tr>
-                        <div className = {styles['show-more']}>
-                                <button class="button is-info" id = {clubArray[i+4]}>Show More</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </motion.div>
-                }
-            </div>
 
-        </div>
+    // Rendering all of the clubs previews
+    for (let i = 0; i < arrayClubs.length; i++) {
+        items.push(
+            //Animation
+            <motion.div className="column is-one-fifth"
+            initial ={{opacity: 0, scale:0}}
+            animate = {{opacity: 1, scale:1}}>
+            <div className = {`box ${styles['inner-box']}`}>
+            <div className = {styles['actual-content']}>
+                <div>
+                    <tr>
+                    <p className="title">{arrayClubs[i][0]}</p>
+                    </tr>
+                    <div>
+                        {/*Renders tags if present */}
+                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][11]}</span>
+                        {arrayClubs[i][12] &&
+                            <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][12]}</span>
+                        }
+                        {arrayClubs[i][13] &&
+                            <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][13]}</span>
+                        }
+                    </div>
+                </div>
+                <div className= {styles['words']}>
+                    <tr>
+                    <hr  className = {styles['line']}style={{
+                        color: '#000000',
+                        backgroundColor: '#000000',
+                        height: .1,
+                        borderColor : '#000000',
+                    }}/>
+                    </tr>
+                    <tr>
+                    {/*Renders logo of club */}
+                    <img src={arrayClubs[i][18]} alt = "logo"/>
+                    </tr>
+                    <tr>
+                    <hr  className = {styles['line1']}style={{
+                        color: '#000000',
+                        height: .1
+                    }}/>
+                    </tr>
+                    <tr>
+                    {/*Basic preview information about the club */}
+                    <h3><strong>Members</strong>: {arrayClubs[i][2]}</h3>
+                    <h3><strong>Meeting Room: </strong> 
+                            {arrayClubs[i][9]}</h3>
+                    <h3><strong>Advisor Email</strong>: {arrayClubs[i][6]}</h3>
+                    </tr>
+                    <tr>
+                    <hr  className = {styles['line1']}style={{
+                        color: '#000000',
+                        height: .1
+                    }}/>
+                    </tr>
+                    {/*Button to display modal when pressed */}
+                    <div className = {styles['show-more']}>
+                            <button className="button is-info" id = {arrayClubs[i][17]}>Show More</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </motion.div>
         )
     }
 
-    for (let i = 0; i < clubName.length; i++) {
+
+    // Renders modals for all of the club previews, presented when the "Show More" button is pressed
+    for (let i = 0; i < arrayClubs.length; i++) {
         modals.push(
-            <div class="modal" id = {`modal${clubArray[i]}`}>
-            <div class="modal-background"  id = {`modalbg${clubArray[i]}`}></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                <div class={`modal-card-title ${styles['header']}`}>{clubName[i]}
+            <div className="modal" id = {`modal${arrayClubs[i][17]}`}>
+            <div className="modal-background" id = {`modalbg${arrayClubs[i][17]}`}></div>
+            <div className="modal-card">
+                <header className="modal-card-head">
+                <div className={`modal-card-title ${styles['header']}`}>{arrayClubs[i][0]}
                     <div>
-                    <span class={"tag is-info is-light"}>{tag1[i]}</span>
-                    {tag2[i] &&
-                        <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag2[i]}</span>
+                    {/*Renders tags if present */}
+                    <span className={"tag is-info is-light"}>{arrayClubs[i][11]}</span>
+                    {arrayClubs[i][12] &&
+                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][12]}</span>
                     }
-                    {tag3[i] &&
-                        <span class={`tag is-info is-light ${styles['tag-f']}`}>{tag3[i]}</span>
+                    {arrayClubs[i][13] &&
+                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][13]}</span>
                     }
                     </div>
                 </div>
-                <button class="delete" aria-label="close" id = {`delete${clubArray[i]}`}></button>
+                <button className="delete" aria-label="close" id = {`delete${arrayClubs[i][17]}`}></button>
                 </header>
-                <section class="modal-card-body">
-                    <section class="section">
-                        <h1 class="title">Description</h1>
-                        <h2 class="subtitle">
-                            {description[i]}
+                {/*Renders more extensive information about club not shown in preview */}
+                <section className="modal-card-body">
+                    <section className="section">
+                        <h1 className="title">Description</h1>
+                        <h2 className="subtitle">
+                            {arrayClubs[i][8]}
                         </h2>
                     </section>  
-                    <section class="section">
-                        <h1 class="title">What Do You Do?</h1>
-                        <h2 class="subtitle">
-                            {whatToDo[i]}
+                    <section className="section">
+                        <h1 className="title">What Do You Do?</h1>
+                        <h2 className="subtitle">
+                            {arrayClubs[i][7]}
                         </h2>
                     </section>  
-                    <section class="section">
-                        <h1 class="title">Contact Information</h1>
-                        <h2 class="subtitle">
+                    <section className="section">
+                        {/*Renders information about how to get into contact */}
+                        <h1 className="title">Contact Information</h1>
+                        <h2 className="subtitle">
                             <div className = "columns is-mobile">
                                 <div className = "column">
-                                    <h3><strong>Number of Members:</strong> {members[i]}</h3>
-                                    <h3><strong>Number of Officers:</strong> {officers[i]}</h3>
-                                    <h3><strong>Months Active: </strong>{activeMonths[i]}</h3>
-                                    <h3><strong>President: </strong>{presName[i]}</h3>
+                                    <h3><strong>Number of Members:</strong> {arrayClubs[i][2]}</h3>
+                                    <h3><strong>Number of Officers:</strong> {arrayClubs[i][2]}</h3>
+                                    <h3><strong>Months Active: </strong>{arrayClubs[i][10]}</h3>
+                                    <h3><strong>President: </strong>{arrayClubs[i][3]}</h3>
                                 </div>
                                 <div className = "column">
-                                <h3><strong>Meeting Room: </strong> {meetRoom[i]}</h3>
-                                <h3><strong>Advisor:</strong> {advisorName[i]}</h3>
-                                <h3><strong>Advisor Email</strong>: {advisorEmail[i]}</h3>
+                                <h3><strong>Meeting Room: </strong> {arrayClubs[i][2]}</h3>
+                                <h3><strong>Advisor:</strong> {arrayClubs[i][5]}</h3>
+                                <h3><strong>Advisor Email</strong>: {arrayClubs[i][6]}</h3>
                                 
                                 </div>
                             </div>
-                            {instaLink[i] &&
-                            <a href = {instaLink[i]}>
-                            <button class={`button is-danger ${styles['link-button']}`}>
-                                <span class="icon is-medium">
-                                <i className="fab fa-instagram"></i>
-                                </span>
-                                <span>Instagram</span>
-                            </button>
-                            </a>
-                            }
-                            {gcLink[i] &&
-                            <a href = {gcLink[i]}>
-                            <button class={`button is-success ${styles['link-button']}`}>
-                                <span class="icon is-medium">
-                                <i class="fab fa-google"></i>
-                                </span>
-                                <span>Google Classroom</span>
-                            </button>
-                            </a>
-                            }
                         </h2>
                     </section>  
                 </section>
+                {/*Renders Social Media / Google Classroom at bottom if present */}
+                <footer class="modal-card-foot">
+                {arrayClubs[i][14] &&
+                    <a href = {arrayClubs[i][14]}>
+                    <button className={`button is-danger ${styles['link-button']}`}>
+                        <span className="icon is-medium">
+                        <i className="fab fa-instagram"></i>
+                        </span>
+                        <span>Instagram</span>
+                    </button>
+                    </a>
+                    }
+                    {arrayClubs[i][15] &&
+                    <a href = {arrayClubs[i][15]}>
+                    <button className={`button is-success ${styles['link-button']}`}>
+                        <span className="icon is-medium">
+                        <i className="fab fa-google"></i>
+                        </span>
+                        <span>Google Classroom</span>
+                    </button>
+                    </a>
+                }
+                </footer>
             </div>
             </div>
         )
     }
 
+    // Renders components made above 
     return(
         <div>
-            {items}
+            <div className = {styles['results']}>
+                <div className= {`columns ${styles['club-box']}`}>
+                    {items}
+                </div>
+            </div>
             {modals}
         </div>
     );

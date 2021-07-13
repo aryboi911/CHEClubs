@@ -6,8 +6,8 @@
     display:flex;
     background: #333333;
     align-items: center;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }

@@ -1,22 +1,39 @@
-import React from 'react';
+// Renders the search bar for use on the home page
+
+import React, {useState} from 'react';
 import styles from './Search.module.css';
 
-export function Search(){
+// Logs value in the search bar and exports to HomePage.js file for use and addition to URL
+export function Search(props){
+
+    const [term, setTerm] = useState(props.term || '');
+
+    function submit(e) {
+        if(typeof props.search === 'function') {
+            props.search(term);
+        }
+        console.log(term);
+        e.preventDefault();
+    }
+
+
+    //Renders the search bar with the bar and the search button
     return(
         <div>
             <div className = {styles.search}>   
-                <form className= "box">
+                <form className= "box" onSubmit={submit}>
                     <div className="field has-addons">
-                    <p className="control is-expanded">
-                        <input className="input" type="text" placeholder="Club Name..."/>
-                    </p>
-                    <p className="control">
-                    <button className={"button"}>
-                        <div className="icon">
-                            <i className="fas fa-search"></i>
-                        </div>
-                    </button>
-                    </p>
+                        <p className="control is-expanded">
+                            <input className="input" type="text" placeholder="Club Name..." value={term}
+                            onChange = {(e) => setTerm(e.target.value)}/>
+                        </p>
+                        <p className="control">
+                        <button className={"button"} onClick = {submit}>
+                            <div className="icon">
+                                <i className="fas fa-search"></i>
+                            </div>
+                        </button>
+                        </p>
                     </div>
                 </form>
             </div>

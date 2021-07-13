@@ -1,27 +1,31 @@
+// Renders filters and adds club results to correct portion of the page
+
 import React from 'react';
 import styles from './SearchResultsSummary.module.css';
 import {ClubResults} from '../ClubResults'
 
 export function SearchResultsSummary(){
     return(
-        <div class="columns is-mobile">
-            <div class="column is-one-quarter">
-                <div class= {styles['filter']}>
-                    <h1 class="subtitle is-4"><strong>Filters</strong></h1>
+        <div className="columns is-mobile">
+            <div className="column is-one-quarter">
+                <div className= {styles['filter']}>
+                    {/*Renders filters subsection */}
+                    <h1 className="subtitle is-4"><strong>Filters</strong></h1>
                     <hr style={{
                         color: '#000000',
                         backgroundColor: '#000000',
                         height: .1,
                         borderColor : '#000000',
                     }}/>
-                    <label class="label">Category</label>
-                    <button class={`button is-rounded ${styles['category']}`}
+                    {/*Renders category selection menu */}
+                    <label className="label">Category</label>
+                    <button className={`button is-rounded ${styles['category']}`}
                         id = "catVolunteering" >Volunteering</button>
-                    <button class={`button is-rounded ${styles['category']}`}
+                    <button className={`button is-rounded ${styles['category']}`}
                         id = "catScience" >Science</button>
-                    <button class={`button is-rounded ${styles['category']}`}
+                    <button className={`button is-rounded ${styles['category']}`}
                         id = "catSports" >Sports</button>
-                    <button class={`button is-rounded ${styles['category']}`}
+                    <button className={`button is-rounded ${styles['category']}`}
                         id = "catArts" >Arts</button>
                     <hr  className = {styles['line']}style={{
                         color: '#dcdcdc',
@@ -29,14 +33,15 @@ export function SearchResultsSummary(){
                         height: .1,
                         borderColor : '#dcdcdc',
                     }}/>
-                    <label class="label">Number of Members</label>
+                    {/*Renders filter for number of members */}
+                    <label className="label">Number of Members</label>
                     <div className = {styles['students']}>
-                        <div class={`control ${styles['min']}`}>
-                            <input class="input" type="text" placeholder="Min."/>
+                        <div className={`control ${styles['min']}`}>
+                            <input className="input" type="text" placeholder="Min."/>
                         </div>
                         <p>—</p>
-                        <div class={`control ${styles['max']}`}>
-                            <input class="input" type="text" placeholder="Max."/>
+                        <div className={`control ${styles['max']}`}>
+                            <input className="input" type="text" placeholder="Max."/>
                         </div>
                     </div>
                     <hr  className = {styles['line']}style={{
@@ -45,17 +50,18 @@ export function SearchResultsSummary(){
                         height: .1,
                         borderColor : '#dcdcdc',
                     }}/>
-                    <div class="field">
-                        <label class="label">Activity</label>
-                        <div class="control">
+                    {/*Renders filters based on time active */}
+                    <div className="field">
+                        <label className="label">Activity</label>
+                        <div className="control">
                             <input type="checkbox"/>
-                            <label class={`checkbox ${styles['check-box']}`}>
+                            <label className={`checkbox ${styles['check-box']}`}>
                             Active Now
                             </label>
                         </div>
-                        <div class="control">
+                        <div className="control">
                             <input type="checkbox"/>
-                            <label class={`checkbox ${styles['check-box']}`}>
+                            <label className={`checkbox ${styles['check-box']}`}>
                             Active During the Summer
                             </label>
                         </div>
@@ -66,30 +72,33 @@ export function SearchResultsSummary(){
                         height: .1,
                         borderColor : '#dcdcdc',
                     }}/>
-                    <button class="button is-black is-outlined">
+                    {/*Filter button for submitting filters once selected */}
+                    <button className="button is-black is-outlined">
                         <span>Filter</span>
                     </button>
                 </div>
             </div>
-            <div class="column">
-                <div class= {styles['header']}>
-                    <h1 class="subtitle is-4">Best Results for <strong>Science Olympiad</strong></h1>
-
-                    <div class="field">
-                    <p class="control has-icons-left">
-                        <span class="select">
+            <div className="column">
+                {/*Header for the results section of the page, including title and "Sort By" dropdown */}
+                <div className= {styles['header']}>
+                    <h1 className="subtitle is-4">Best Results for <strong>Science Olympiad</strong></h1>
+                    {/*Renders the "Sort By" dropdown */}
+                    <div className="field">
+                    <p className="control has-icons-left">
+                        <span className="select">
                         <select className= "button is-ghost">
                             <option selected>Sort By: Alphabetical</option>
                             <option># of Members</option>
                             <option>Advisor</option>
                         </select>
                         </span>
-                        <span class="icon is-small is-left">
-                        <i class="fas fa-sort"></i>
+                        <span className="icon is-small is-left">
+                        <i className="fas fa-sort"></i>
                         </span>
                     </p>
                     </div>
                 </div>
+                {/*Imports results and displays them */}
                 <ClubResults/>
             </div>
         </div>
