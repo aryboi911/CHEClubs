@@ -6,12 +6,73 @@ import styles from './ClubResults.module.css';
 import { arrayClubs } from '../Data';
 import {motion} from 'framer-motion';
 
-export function ClubResults(){
+export function ClubResults(props){
+
+    let clubsArray = arrayClubs
+
+    if(props.searchTerm){
+        clubsArray = clubsArray.filter(club => {
+            if(typeof club[0] === 'string'){
+                    if(club[0].toLowerCase().trim().includes(props.searchTerm.toLowerCase().trim())){
+                    return true;
+                }
+            }
+        })
+    }
+
+    if(props.category){
+        clubsArray = clubsArray.filter(club => {
+            for(let i = 11; i < 14; i++){
+                if(typeof club[i] === 'string'){
+                    if(club[i].toLowerCase().trim().includes(props.category.toLowerCase().trim())){
+                        return true;
+                    }
+                }
+            }
+        })
+    }
+
+    if(props.minMembers){
+        clubsArray = clubsArray.filter(club => {
+            if(club[1] >= props.minMembers){
+                return true;
+            }
+        })
+    }
+
+    if(props.maxMembers){
+        clubsArray = clubsArray.filter(club => {
+            if(club[1] <= props.maxMembers){
+                return true;
+            }
+        })
+    }
+
+    if(props.activeNow){
+        clubsArray = clubsArray.filter(club => {
+            if(club[19] === "yes"){
+                return true;
+            }
+        })
+    }
+
+    if(props.activeSummer){
+        clubsArray = clubsArray.filter(club => {
+            if(club[20] === "yes"){
+                return true;
+            }
+        })
+    }
+
+    if(props.sortBy === "alphabetical"){
+        clubsArray.sort();
+    }
 
     const items = [];
 
     // Rendering all of the clubs previews
-    for (let i = 0; i < arrayClubs.length; i++) {
+    if(clubsArray.length > 0){
+    for (let i = 0; i < clubsArray.length; i++) {
         items.push(
             <div className = {styles['results']}>
             <div>
@@ -23,38 +84,38 @@ export function ClubResults(){
                 <div className="columns is-mobile">
                     <div className="column is-one-fifth">
                     {/*Renders logo of club */}
-                    <img src = {arrayClubs[i][18]} alt = "logo"/>
+                    <img src = {clubsArray[i][18]} alt = "logo"/>
                     </div>
                     <div className="column is-one-third">
-                        <h1 className="title is-4">{arrayClubs[i][0]}</h1>
+                        <h1 className="title is-4">{clubsArray[i][0]}</h1>
                         {/*Basic preview information about the club */}
                         <div>
-                            <h3><strong>Number of Members:</strong> {arrayClubs[i][2]}</h3>
-                            <h3><strong>Number of Officers:</strong> {arrayClubs[i][2]}</h3>
-                            <h3><strong>Months Active: </strong>{arrayClubs[i][10]}</h3>
-                            <h3><strong>President: </strong>{arrayClubs[i][3]}</h3>
+                            <h3><strong>Number of Members:</strong> {clubsArray[i][2]}</h3>
+                            <h3><strong>Number of Officers:</strong> {clubsArray[i][2]}</h3>
+                            <h3><strong>Months Active: </strong>{clubsArray[i][10]}</h3>
+                            <h3><strong>President: </strong>{clubsArray[i][3]}</h3>
                         </div>
                     </div>
                     <div className="column is-two-fifths">  
                         {/*Renders tags if present */}
                         <div>
-                            <span className={"tag is-info is-light"}>{arrayClubs[i][11]}</span>
-                            {arrayClubs[i][12] &&
-                                <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][12]}</span>
+                            <span className={"tag is-info is-light"}>{clubsArray[i][11]}</span>
+                            {clubsArray[i][12] &&
+                                <span className={`tag is-info is-light ${styles['tag-f']}`}>{clubsArray[i][12]}</span>
                             }
-                            {arrayClubs[i][13] &&
-                                <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][13]}</span>
+                            {clubsArray[i][13] &&
+                                <span className={`tag is-info is-light ${styles['tag-f']}`}>{clubsArray[i][13]}</span>
                             }
                         </div>
                         {/*Basic preview information about the club */}
                         <div >
                             <h3 className = {styles['contact']}><strong>Meeting Room: </strong> 
-                                {arrayClubs[i][2]}</h3>
-                            <h3><strong>Advisor:</strong> {arrayClubs[i][5]}</h3>
-                            <h3><strong>Advisor Email</strong>: {arrayClubs[i][6]}</h3>
+                                {clubsArray[i][2]}</h3>
+                            <h3><strong>Advisor:</strong> {clubsArray[i][5]}</h3>
+                            <h3><strong>Advisor Email</strong>: {clubsArray[i][6]}</h3>
                             {/*Button to display modal when pressed */}
                             <div className = {styles['show-more']}>
-                                <button className="button is-info" id = {arrayClubs[i][17]}>Show More</button>
+                                <button className="button is-info" id = {clubsArray[i][17]}>Show More</button>
                             </div>
                         </div>
                     </div>
@@ -63,36 +124,36 @@ export function ClubResults(){
                 </div>
             </motion.div>
             {/*Renders modals for all of the club previews, presented when the "Show More" button is pressed */}
-            <div className="modal" id = {`modal${arrayClubs[i][17]}`}>
-            <div className="modal-background" id = {`modalbg${arrayClubs[i][17]}`}></div>
+            <div className="modal" id = {`modal${clubsArray[i][17]}`}>
+            <div className="modal-background" id = {`modalbg${clubsArray[i][17]}`}></div>
             <div className="modal-card">
                 <header className="modal-card-head">
-                <div className={`modal-card-title ${styles['header']}`}>{arrayClubs[i][0]}
+                <div className={`modal-card-title ${styles['header']}`}>{clubsArray[i][0]}
                     {/*Renders tags if present */}
                     <div>
-                    <span className={"tag is-info is-light"}>{arrayClubs[i][11]}</span>
-                    {arrayClubs[i][12] &&
-                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][12]}</span>
+                    <span className={"tag is-info is-light"}>{clubsArray[i][11]}</span>
+                    {clubsArray[i][12] &&
+                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{clubsArray[i][12]}</span>
                     }
-                    {arrayClubs[i][13] &&
-                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{arrayClubs[i][13]}</span>
+                    {clubsArray[i][13] &&
+                        <span className={`tag is-info is-light ${styles['tag-f']}`}>{clubsArray[i][13]}</span>
                     }
                     </div>
                 </div>
-                <button className="delete" aria-label="close" id = {`delete${arrayClubs[i][17]}`}></button>
+                <button className="delete" aria-label="close" id = {`delete${clubsArray[i][17]}`}></button>
                 </header>
                 {/*Renders more extensive information about club not shown in preview */}
                 <section className="modal-card-body">
                     <section className="section">
                         <h1 className="title">Description</h1>
                         <h2 className="subtitle">
-                            {arrayClubs[i][8]}
+                            {clubsArray[i][8]}
                         </h2>
                     </section>  
                     <section className="section">
                         <h1 className="title">What Do You Do?</h1>
                         <h2 className="subtitle">
-                            {arrayClubs[i][7]}
+                            {clubsArray[i][7]}
                         </h2>
                     </section>  
                     {/*Renders information about how to get into contact */}
@@ -101,15 +162,15 @@ export function ClubResults(){
                         <h2 className="subtitle">
                             <div className = "columns is-mobile">
                                 <div className = "column">
-                                    <h3><strong>Number of Members:</strong> {arrayClubs[i][2]}</h3>
-                                    <h3><strong>Number of Officers:</strong> {arrayClubs[i][2]}</h3>
-                                    <h3><strong>Months Active: </strong>{arrayClubs[i][10]}</h3>
-                                    <h3><strong>President: </strong>{arrayClubs[i][3]}</h3>
+                                    <h3><strong>Number of Members:</strong> {clubsArray[i][2]}</h3>
+                                    <h3><strong>Number of Officers:</strong> {clubsArray[i][2]}</h3>
+                                    <h3><strong>Months Active: </strong>{clubsArray[i][10]}</h3>
+                                    <h3><strong>President: </strong>{clubsArray[i][3]}</h3>
                                 </div>
                                 <div className = "column">
-                                <h3><strong>Meeting Room: </strong> {arrayClubs[i][2]}</h3>
-                                <h3><strong>Advisor:</strong> {arrayClubs[i][5]}</h3>
-                                <h3><strong>Advisor Email</strong>: {arrayClubs[i][6]}</h3>
+                                <h3><strong>Meeting Room: </strong> {clubsArray[i][2]}</h3>
+                                <h3><strong>Advisor:</strong> {clubsArray[i][5]}</h3>
+                                <h3><strong>Advisor Email</strong>: {clubsArray[i][6]}</h3>
                                 
                                 </div>
                             </div>
@@ -118,8 +179,8 @@ export function ClubResults(){
                 </section>
                 {/*Renders Social Media / Google Classroom at bottom if present */}
                 <footer class="modal-card-foot">
-                {arrayClubs[i][14] &&
-                    <a href = {arrayClubs[i][14]}>
+                {clubsArray[i][14] &&
+                    <a href = {clubsArray[i][14]}>
                     <button className={`button is-danger ${styles['link-button']}`}>
                         <span className="icon is-medium">
                         <i className="fab fa-instagram"></i>
@@ -128,8 +189,8 @@ export function ClubResults(){
                     </button>
                     </a>
                     }
-                    {arrayClubs[i][15] &&
-                    <a href = {arrayClubs[i][15]}>
+                    {clubsArray[i][15] &&
+                    <a href = {clubsArray[i][15]}>
                     <button className={`button is-success ${styles['link-button']}`}>
                         <span className="icon is-medium">
                         <i className="fab fa-google"></i>
@@ -142,6 +203,21 @@ export function ClubResults(){
             </div>
             </div>
             </div>
+            </div>
+        )
+    }
+}
+
+    else{
+        items.push(
+            <div>
+                <div className = {styles['no-results-found']}>
+                    <img src = "https://i0.wp.com/www.ecommerce-nation.com/wp-content/uploads/2017/08/How-to-Give-Your-E-Commerce-No-Results-Page-the-Power-to-Sell.png?fit=1000%2C600&ssl=1"
+                    className = {styles['no-results']}/>
+                </div>
+                <div className = {styles['no-results-found']}>
+                    <h1 className="subtitle is-3"><strong>No Results Found!</strong></h1>
+                </div>
             </div>
         )
     }

@@ -4,14 +4,31 @@ import React from 'react';
 import styles from './SearchSuggestions.module.css';
 import {motion} from 'framer-motion';
 
-export function SearchSuggestions(){
+export function SearchSuggestions(props){
+
+    function volunteering(){
+        props.volunteering();
+    }
+
+    function sports(){
+        props.sports();
+    }
+
+    function science(){
+        props.science();
+    }
+
+    function arts(){
+        props.arts();
+    }
+
     return(
         // Renders the various options as ghost buttons with icons
         <div className = {styles.suggestions}>
             <motion.div className = {styles.group}
                 whileHover = {{scale: 1.15}}
                 >
-                <button className="button is-ghost has-text-light">
+                <button className="button is-ghost has-text-light" onClick = {arts}>
                     <span className={`icon is-small ${styles['suggestion']}`}><i className="fas fa-paint-brush"></i></span>
                     <strong className = "has-text-light">Arts</strong>
                 </button>
@@ -19,7 +36,7 @@ export function SearchSuggestions(){
             <motion.div className = {styles.group}
                 whileHover = {{scale: 1.15}}
                 >
-                <button className="button is-ghost has-text-light">
+                <button className="button is-ghost has-text-light" onClick = {sports}>
                     <span className={`icon is-small ${styles['suggestion']}`}><i className="fas fa-volleyball-ball"></i></span>
                     <strong className = "has-text-light">Sports</strong>
                 </button>
@@ -27,7 +44,7 @@ export function SearchSuggestions(){
             <motion.div className = {styles.group}
                 whileHover = {{scale: 1.15}}
                 >
-                <button className="button is-ghost has-text-light">
+                <button className="button is-ghost has-text-light" onClick = {science}>
                     <span className={`icon is-small ${styles['suggestion']}`}><i className="fas fa-flask"></i></span>
                     <strong className = "has-text-light">Science</strong>
                 </button>
@@ -35,7 +52,7 @@ export function SearchSuggestions(){
             <motion.div className = {styles.group}
                 whileHover = {{scale: 1.15}}
                 >
-                <button className="button is-ghost has-text-light">
+                <button className="button is-ghost has-text-light" onClick = {volunteering}>
                     <span className={`icon is-small ${styles['suggestion']}`}><i className="fas fa-hands-helping"></i></span>
                     <strong className = "has-text-light">Volunteering</strong>
                 </button>

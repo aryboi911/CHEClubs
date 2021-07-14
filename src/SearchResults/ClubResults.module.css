@@ -28,3 +28,12 @@
 .link-button{
     margin-right: 10px;
 }
+
+.no-results{
+    max-width: 50vw;
+}
+
+.no-results-found{
+    display: flex;
+    justify-content: center;
+}

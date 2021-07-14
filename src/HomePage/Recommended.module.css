@@ -88,6 +88,6 @@
 .header{
     display: flex;
     justify-content: space-between;
-    padding-left: 2.6vw;
+    padding-left: 50px;
     padding-right: 3.55vw;
 }

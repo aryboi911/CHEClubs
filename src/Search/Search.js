@@ -24,7 +24,8 @@ export function Search(props){
                 <form className= "box" onSubmit={submit}>
                     <div className="field has-addons">
                         <p className="control is-expanded">
-                            <input className="input" type="text" placeholder="Club Name..." value={term}
+                            <input className="input" type="text" placeholder="Club Name... (Submit Empty
+ to Find Clubs with Other Filters)" value={term}
                             onChange = {(e) => setTerm(e.target.value)}/>
                         </p>
                         <p className="control">

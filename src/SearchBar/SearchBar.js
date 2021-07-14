@@ -27,6 +27,10 @@ export function SearchBar(props){
         props.home();
     }
 
+    let searchTerm = "Club Name..."
+    if(props.searchTerm){
+        searchTerm = props.searchTerm;
+    }
 
 
     return(
@@ -44,7 +48,7 @@ export function SearchBar(props){
                 <form onSubmit={submit}>
                 <div className="field has-addons">
                     <p className="control is-expanded">
-                        <input className="input" type="text" placeholder="Club Name..."
+                        <input className="input" type="text" placeholder={searchTerm}
                             onChange = {(e) => setTerm(e.target.value)}
                             />
                     </p>
